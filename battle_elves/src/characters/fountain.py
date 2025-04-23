@@ -1,0 +1,1 @@
+# Water fountain class

@@ -1,0 +1,53 @@
+{
+    "battle_elves": {
+        "assets": {
+            "images": {
+                "characters": {},
+                "backgrounds": {},
+                "ui": {}
+            },
+            "sounds": {
+                "effects": {},
+                "music": {}
+            },
+            "fonts": {}
+        },
+        "src": {
+            "main.py": "import tkinter as tk\nfrom screens.main_menu import MainMenu\n\nif __name__ == \"__main__\":\n    root = tk.Tk()\n    root.title(\"Battle Elves\")\n    app = MainMenu(root)\n    root.mainloop()",
+            "config.py": "# Configuration settings for the game\n\nGAME_WIDTH = 800\nGAME_HEIGHT = 600\nFPS = 60\n\n# Player settings\nPLAYER_SPEED = 5\nPLAYER_HEALTH = 5\n\n# Enemy settings\nENEMY_SPAWN_RATE = 3  # in seconds\nENEMY_TYPES = {\n    \"level1\": {\n        \"health\": 1,\n        \"speed\": 2,\n        \"fire_rate\": 3\n    },\n    \"level2\": {\n        \"health\": 2,\n        \"speed\": 3,\n        \"fire_rate\": 3\n    },\n    \"level3\": {\n        \"health\": 2,\n        \"speed\": 3,\n        \"fire_rate\": 1.5\n    }\n}\n\n# Level settings\nLEVEL_TIMES = {\n    1: 90,  # 1.5 minutes in seconds\n    2: 180  # 3 minutes in seconds\n}\n",
+            "characters": {
+                "defender.py": "# Defender class",
+                "enemy.py": "# Enemy classes",
+                "fountain.py": "# Water fountain class",
+                "bullet.py": "# Bullet class",
+                "wall.py": "# Wall class"
+            },
+            "screens": {
+                "main_menu.py": "# Main menu screen",
+                "game_screen.py": "# Game screen",
+                "help_screen.py": "# Help screen",
+                "about_screen.py": "# About screen",
+                "hall_of_fame.py": "# Hall of fame screen",
+                "game_over.py": "# Game over screen"
+            },
+            "utils": {
+                "collision.py": "# Collision detection utilities",
+                "animation.py": "# Animation utilities",
+                "sound_manager.py": "# Sound management utilities",
+                "score_manager.py": "# Score management utilities",
+                "maze_generator.py": "# Maze generation utilities"
+            }
+        },
+        "data": {
+            "scores.json": "[]",
+            "settings.json": "{\n    \"sound_enabled\": true,\n    \"music_volume\": 0.5,\n    \"effects_volume\": 0.7,\n    \"enemy_spawn_rate\": 3\n}"
+        },
+        "docs": {
+            "README.md": "# Battle Elves\n\nA game where an elf defender protects a water fountain from enemy elves.\n\n## How to Run\n\n```\npython src/main.py\n```\n\n## Controls\n\n- Arrow keys to move\n- Space to shoot\n"
+        },
+        "tests": {
+            "test_collision.py": "",
+            "test_game_logic.py": ""
+        }
+    }
+}

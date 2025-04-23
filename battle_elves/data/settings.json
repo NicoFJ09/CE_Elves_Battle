@@ -1,0 +1,6 @@
+{
+    "sound_enabled": true,
+    "music_volume": 0.5,
+    "effects_volume": 0.7,
+    "enemy_spawn_rate": 3
+}
