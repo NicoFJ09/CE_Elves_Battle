@@ -1,7 +1,7 @@
 import tkinter as tk
 from screens.main_menu import create_main_menu
 from screens.game_screen import create_game_screen
-from screens.screen_manager import ScreenManager
+from screens.screen_manager import initialize_screen_manager, add_screen, show_screen
 
 def main():
     root = tk.Tk()
@@ -23,14 +23,14 @@ def main():
     root.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
 
     # Initialize the ScreenManager
-    screen_manager = ScreenManager(root)
+    initialize_screen_manager(root)
 
     # Register screens with the ScreenManager
-    screen_manager.add_screen("main_menu", lambda: create_main_menu(root, lambda: screen_manager.show_screen("game_screen"), lambda: print("Help screen clicked!")))
-    screen_manager.add_screen("game_screen", lambda: create_game_screen(root, lambda: screen_manager.show_screen("main_menu")))
+    add_screen("main_menu", lambda: create_main_menu(root, lambda: show_screen("game_screen"), lambda: print("Help screen clicked!")))
+    add_screen("game_screen", lambda: create_game_screen(root, lambda: show_screen("main_menu")))
 
     # Show the main menu initially
-    screen_manager.show_screen("main_menu")
+    show_screen("main_menu")
 
     root.mainloop()
 
